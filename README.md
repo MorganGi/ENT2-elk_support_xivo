@@ -62,9 +62,9 @@ Make sure that kibana is working.
 To do this :
 1. Log in Kibana: http://localhost:5601
 
-- to use geo ip location make sure the field geoip.coordinates is `"type" :  "geo_point"`.
-To make it go to *Management -> Dev Tools -> Console* ant type `Get /xivo/_mapping`. If the field is `"type" : "float"` IP location will *not* work.
-REASON : You probably put your logs in the directory `/var/tmp/elkforxivo` before the start of the container.
+1. to use geo ip location make sure the field geoip.coordinates is `"type" :  "geo_point"`.
+To make it go to *Management -> Dev Tools -> Console* and type `Get /xivo/_mapping`. If the field is `"type" : "float"` IP location will *not* work.
+1. REASON : You probably put your logs in the directory `/var/tmp/elkforxivo` before the start of the container.
 
 
 ## Copy logs
@@ -170,7 +170,7 @@ Verifications:
 
 - Base ELK docker image doc: https://elk-docker.readthedocs.io/
 
-##Improuvement : Analyse new logs or fields
+## Improuvement : Analyse new logs or fields
 
 The following steps are key manipulations if you want to analyse new logs but you should search for more detail on the official web site: [Logstash Reference](https://www.elastic.co/guide/en/logstash/current/index.html)
 

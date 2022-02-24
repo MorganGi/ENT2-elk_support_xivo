@@ -1,0 +1,38 @@
+ASTLEVEL (?:VERBOSE|ERROR|NOTICE|INFO|DEBUG|DTMF|WARNING)
+ASTTHREADID [0-9]+
+ASTCALLID C-[0-9a-f]{8}
+
+# Log source file (Normally a c file)
+ASTSRC [-a-z._0-9/]+
+
+
+# Context
+ASTCONTEXTEXTENSION [A-Za-z0-9*#~_\-]+
+ASTCONTEXTNAME [-a-z0-9]+
+ASTCONTEXTPOSITION \d+
+ASTCONTEXT %{ASTCONTEXTEXTENSION:asterisk_context_extension}@%{ASTCONTEXTNAME:asterisk_context_name}:%{ASTCONTEXTPOSITION:asterisk_context_position}
+
+# Application
+ASTAPP [A-Z][A-Za-z0-9]+
+
+# Interfaces
+AST_SIP_INTERFACE SIP/[-_A-Za-z0-9]+
+ASTINTERFACE %{AST_SIP_INTERFACE}
+
+# Channels
+ASTCHANNEL_SIP %{AST_SIP_INTERFACE:asterisk_sip_interface}-[a-f0-9]+
+ASTCHANNEL_LOCAL Local/[-a-z0-9@;]+
+ASTCHANNEL (:?%{ASTCHANNEL_SIP}|%{ASTCHANNEL_LOCAL})
+
+ASTCONTENT_REGISTRATION Registered SIP '%{USERNAME:asterisk_sip_peer}' at %{IPORHOST:asterisk_sip_peer_ip}:%{POSINT:asterisk_sip_peer_port}
+ASTCONTENT_MANAGER Manager '%{USERNAME:asterisk_manager_user}' logged (:?off|on) from %{IPORHOST:asterisk_manager_host}
+ASTCONTENT_EXECUTE Executing \[%{ASTCONTEXT:asterisk_context}\] %{ASTAPP:asterisk_app}\("%{ASTCHANNEL:asterisk_channel}", "%{GREEDYDATA:asterisk_app_params}"\) in new stack
+
+#ne prend pas en compte les INCONMING : GOT...  --> ASTCONTENT_RESPONSE Got SIP response %{NUMBER:response_number} "%{GREEDYDATA:response_message}" back from %{IPORHOST:asterisk_sip_peer_ip_reponse}:%{POSINT:asterisk_sip_peer_port_reponse}
+
+ASTCONTENT_RESPONSE (:?%{DATA:Incoming call}| )Got SIP response %{NUMBER:response_number} %{GREEDYDATA:response_message} back from %{IPORHOST:asterisk_sip_peer_ip_reponse}:%{POSINT:asterisk_sip_peer_port_reponse}
+
+ASTCONTENT [\s]*(:?%{ASTCONTENT_REGISTRATION}|%{ASTCONTENT_MANAGER}|%{ASTCONTENT_EXECUTE}|%{ASTCONTENT_RESPONSE}|%{GREEDYDATA:asterisk_log_blob})
+
+ASTLOG ^\[%{SYSLOGTIMESTAMP:asterisk_timestamp}\] %{ASTLEVEL:asterisk_severity}\[%{ASTTHREADID:asterisk_thread_id}\](:?\[%{ASTCALLID:asterisk_callid}\]|) %{ASTSRC:asterisk_src_file}:%{ASTCONTENT}$
+

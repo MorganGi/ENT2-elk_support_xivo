@@ -1,0 +1,7 @@
+XDAEMON_REQUEST \(%{IPORHOST:client}\) %{WORD:request} %{URI:uri} %{NUMBER:response}
+
+XDAEMON_CONTENT (%{XDAEMON_REQUEST}|%{GREEDYDATA:xdaemon_log_blob})
+
+XDAEMONLOG ^%{TIMESTAMP_ISO8601:xdaemon_timestamp} \[%{POSINT:xdaemon_pid}\] \(%{LOGLEVEL:xdaemon_severity}\) \(%{PROG:xdaemon}\): %{XDAEMON_CONTENT}$
+
+
