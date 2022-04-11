@@ -32,7 +32,7 @@ Note:
 
 To be able to explore logs, run the container using docker-compose.
 
-## Run the container
+## Run the application
 
 ```bash
 docker-compose up -d
@@ -134,15 +134,4 @@ The following steps are key manipulations if you want to analyse new logs, you s
 1. Create a new pattern file related to your filter. (You can use Grok debugger in kibana: Management -> Dev Tools -> Grock debugger)
 1. add your file in the Dockerfile and re-build the image.
 
-
-# Todo
-
-This is a WIP so here are some todo :
-- Describe how one could enhance the project:
- - how to add grok pattern for asterisk,
- - how to enhance default dashboard/visualizations/saved search
-- Add automatic index pattern creation 
-- Add default dashboard/visualizations/saved search
-- Add configuration for syslog or other XiVO log files
-- ...
 
