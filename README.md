@@ -1,12 +1,11 @@
 # ELK for XiVO
 
-This project describe how to build a docker image 
-- with elk
-- and with some configuration to explore asterisk full logs
+This project describe how to run elk with docker compose
 
 The docker image is built from sebp/elk.
 
-:warning: 
+:warning:
+
 - This project is still in the early phases and a work in progress.
 - It works but with quite a lot of limitations. 
 - And not everything is as good as it may be.
@@ -28,11 +27,6 @@ mkdir -p /var/tmp/elkforxivo/
 
 Note:
 - the path `/var/tmp/elkforxivo/` is mandatory as it is hard coded in the created docker image,
-
-
-# Configuration
-
-Before launching the container you should **NOT** put your logs in the elkforxivo folder cause nginx IP location will not works.
 
 # Launch ELK
 
