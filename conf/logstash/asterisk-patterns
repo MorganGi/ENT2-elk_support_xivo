@@ -26,7 +26,9 @@ ASTCHANNEL (:?%{ASTCHANNEL_SIP}|%{ASTCHANNEL_LOCAL})
 
 ASTCONTENT_REGISTRATION Registered SIP '%{USERNAME:asterisk_sip_peer}' at %{IPORHOST:asterisk_sip_peer_ip}:%{POSINT:asterisk_sip_peer_port}
 ASTCONTENT_MANAGER Manager '%{USERNAME:asterisk_manager_user}' logged (:?off|on) from %{IPORHOST:asterisk_manager_host}
-ASTCONTENT_EXECUTE Executing \[%{ASTCONTEXT:asterisk_context}\] %{ASTAPP:asterisk_app}\("%{ASTCHANNEL:asterisk_channel}", "%{GREEDYDATA:asterisk_app_params}"\) in new stack
+#ASTCONTENT_EXECUTE Executing \[%{ASTCONTEXT:asterisk_context}\] %{ASTAPP:asterisk_app}\("%{ASTCHANNEL:asterisk_channel}", "%{GREEDYDATA:asterisk_app_params}"\) in new stack
+
+ASTCONTENT_EXECUTE Executing \[%{DATA:asterisk_context}\] %{DATA:asterisk_app}\("%{DATA:asterisk_channel}", "%{GREEDYDATA:asterisk_app_params}"\) in new stack
 
 #ne prend pas en compte les INCONMING : GOT...  --> ASTCONTENT_RESPONSE Got SIP response %{NUMBER:response_number} "%{GREEDYDATA:response_message}" back from %{IPORHOST:asterisk_sip_peer_ip_reponse}:%{POSINT:asterisk_sip_peer_port_reponse}
 
