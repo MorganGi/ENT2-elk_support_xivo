@@ -17,6 +17,7 @@ The docker image is built from sebp/elk.
 - having **docker and docker-compose** installed
 - and follow [Prerequisites](https://elk-docker.readthedocs.io/#prerequisites) of elk-docker docker image upon which our image will be built :
   - **mainly** you will have to increase the `vm-max-map-count`, see [Elasticsearch virtual memory guide](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/vm-max-map-count.html#vm-max-map-count)
+- Download **docker-compose.yml** and **XAND6.ndjson** files
 
 ## Create volume on your PC 
 
