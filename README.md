@@ -19,15 +19,6 @@ The docker image is built from sebp/elk.
   - **mainly** you will have to increase the `vm-max-map-count`, see [Elasticsearch virtual memory guide](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/vm-max-map-count.html#vm-max-map-count)
 - Download **elkforxivo** directory, **docker-compose.yml** and **XAND6.ndjson** files
 
-## Create volume on your PC 
-
-You need to create the `/var/tmp/elkforxivo` directory on your PC where Logstash will read your logs from :
-```bash
-mkdir -p /var/tmp/elkforxivo/
-```
-
-Note:
-- the path `/var/tmp/elkforxivo/` is mandatory as it is hard coded in the created docker image,
 
 # Launch ELK
 
