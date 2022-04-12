@@ -1,9 +1,9 @@
 version: "3"
 services:
         elk:
-                image: morgandoc07/elk_support_xivo:v1.3
+                image: morgandoc07/elk_support_xivo
                 volumes:
-                        - /var/tmp/elkforxivo:/var/tmp/elkforxivo:ro
+                        - ./elkforxivo:/var/tmp/elkforxivo:ro
                 ports:
                         - 5601:5601
                         - 5044:5044
