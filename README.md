@@ -62,7 +62,17 @@ Notes:
 - **Nginx access logs** files must start with `access`
 - **Xuc logs** must start with `xuc`
 - **xivo services like authd, confd, ctid** must be `xivo-authd`, `xivo-confd`, `xivo-ctid`
-- :warning:logs must be a plain text asterisk full log (it must be gunzipped)
+:warning: logs must be a plain text asterisk full log (it must be gunzipped)
+
+:white_check_mark: Here is an example :
+```bash
+cp /path/to/your/asterisk/logs /elkforxivo/**asterisk**-name
+```
+
+:x: Here is a bad example :
+```bash
+cp /path/to/your/asterisk/logs /elkforxivo/name-**asterisk**
+```
 
 **make all log readable**
 Make sure logs are readable :
