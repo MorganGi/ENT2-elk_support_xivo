@@ -45,15 +45,17 @@ To do this :
 
 ## Copy logs
 
-|Original log path| container log path |
-| ------------- |:-------------:| 
-| /path/to/your/asterisk/log    | elkforxivo/asterisk-full | 
-| /path/to/your/syslog/log   | elkforxivo/syslog      | 
-| /path/to/your/nginx/log | elkforxivo/nginx     | 
-| /path/to/your/xuc/log | elkforxivo/xuc     | 
-| /path/to/your/xivo-authd/log | elkforxivo/xivo-authd      | 
-| /path/to/your/xivo-confd/log | elkforxivo/xivo-confd     | 
-| /path/to/your/xivo-ctid/log | elkforxivo/xivo-ctid | 
+This is the list of available logs you can copy.
+
+		|Original log path| container log path |
+		| ------------- |:-------------:| 
+		| /path/to/your/asterisk/log    | elkforxivo/asterisk | 
+		| /path/to/your/syslog/log   | elkforxivo/syslog      | 
+		| /path/to/your/nginx/log | elkforxivo/nginx     | 
+		| /path/to/your/xuc/log | elkforxivo/xuc     | 
+		| /path/to/your/xivo-authd/log | elkforxivo/xivo-authd      | 
+		| /path/to/your/xivo-confd/log | elkforxivo/xivo-confd     | 
+		| /path/to/your/xivo-ctid/log | elkforxivo/xivo-ctid | 
 
 
 Notes:
