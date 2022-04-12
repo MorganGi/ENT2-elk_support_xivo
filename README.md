@@ -17,7 +17,7 @@ The docker image is built from sebp/elk.
 - having **docker and docker-compose** installed
 - and follow [Prerequisites](https://elk-docker.readthedocs.io/#prerequisites) of elk-docker docker image upon which our image will be built :
   - **mainly** you will have to increase the `vm-max-map-count`, see [Elasticsearch virtual memory guide](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/vm-max-map-count.html#vm-max-map-count)
-- Download **docker-compose.yml** and **XAND6.ndjson** files
+- Download **elkforxivo** directory, **docker-compose.yml** and **XAND6.ndjson** files
 
 ## Create volume on your PC 
 
@@ -64,16 +64,16 @@ Notes:
 - **Nginx access logs** files must start with `access`
 - **Xuc logs** must start with `xuc`
 - **Xivo services like authd, confd, ctid** must be `xivo-authd`, `xivo-confd`, `xivo-ctid`
-:warning: logs must be a plain text asterisk full log (it must be gunzipped)
+- :warning: logs must be a plain text asterisk full log (it must be gunzipped)
 
 :ballot_box_with_check: Here is an example :
 ```bash
-cp /path/to/your/asterisk/logs /elkforxivo/asterisk-name
+cp /path/to/your/asterisk/logs ./elkforxivo/asterisk-name
 ```
 
 :x: Here is a bad example :
 ```bash
-cp /path/to/your/asterisk/logs /elkforxivo/name-asterisk
+cp /path/to/your/asterisk/logs ./elkforxivo/name-asterisk
 ```
 
 **make all log readable**
