@@ -45,58 +45,29 @@ To do this :
 
 ## Copy logs
 
-**asterisk logs**
-Put inside the asterisk log you want to analyze :
-```bash
-cp /path/to/your/asterisk/log /var/tmp/elkforxivo/asterisk-full
-```
-Notes:
-- inside `/var/tmp/elkforxivo/` directory, the filename must start with `asterisk`
-- `asterisk` must be a plain text asterisk full log (it must be gunzipped)
+|Original log path| container log path |
+| ------------- |:-------------:| 
+| /path/to/your/asterisk/log    | elkforxivo/asterisk-full | 
+| /path/to/your/syslog/log   | elkforxivo/syslog      | 
+| /path/to/your/nginx/log | elkforxivo/nginx     | 
+| /path/to/your/xuc/log | elkforxivo/xuc     | 
+| /path/to/your/xivo-authd/log | elkforxivo/xivo-authd      | 
+| /path/to/your/xivo-confd/log | elkforxivo/xivo-confd     | 
+| /path/to/your/xivo-ctid/log | elkforxivo/xivo-ctid | 
 
 
-**syslog logs**
-Put inside the syslog log you want to analyze :
-```bash
-cp /path/to/your/syslog/log /var/tmp/elkforxivo/syslog
-```
 Notes:
-- inside `/var/tmp/elkforxivo/` directory, the filename must be `syslog`
-- `syslog` must be a plain text syslog log (it must be gunzipped)
-
-**Nginx logs**
-Put inside the syslog log you want to analyze :
-```bash
-cp /path/to/your/nginx/log /var/tmp/elkforxivo/nginx
-```
-Notes:
-- inside `/var/tmp/elkforxivo/` directory, the filename must start with `access`
-- `syslog` must be a plain text syslog log (it must be gunzipped)
-
-**Xuc logs**
-Put inside the syslog log you want to analyze :
-```bash
-cp /path/to/your/xuc/log /var/tmp/elkforxivo/xuc
-```
-Notes:
-- inside `/var/tmp/elkforxivo/` directory, filenames must start with `xuc`
-- `xuc` must be a plain text syslog log (it must be gunzipped)
-
-**xivo daemon logs**: authd, confd, ctid
-Put inside the xivo-{authd,confd,ctid} daemon log you want to analyze :
-```bash
-cp /path/to/your/xivo-authd/log /var/tmp/elkforxivo/xivo-authd
-cp /path/to/your/xivo-confd/log /var/tmp/elkforxivo/xivo-confd
-cp /path/to/your/xivo-ctid/log /var/tmp/elkforxivo/xivo-ctid
-```
-Notes:
-- inside `/var/tmp/elkforxivo/` directory, the filename must be `xivo-authd` or `xivo-confd` or `xivo-ctid`
-- these files must be a plain text syslog log (it must be gunzipped)
+- **Asterisk** files must start with `asterisk`
+- **logs** files must be `syslog`
+- **Nginx access logs** files must start with `access`
+- **Xuc logs** must start with `xuc`
+- **xivo services like authd, confd, ctid** must be `xivo-authd`, `xivo-confd`, `xivo-ctid`
+- :warning:logs must be a plain text asterisk full log (it must be gunzipped)
 
 **make all log readable**
 Make sure logs are readable :
 ```bash
-chmod +r /var/tmp/elkforxivo/*
+chmod +r /elkforxivo/*
 ```
 After some startup time, it will start to read logs
 and analyze it.
