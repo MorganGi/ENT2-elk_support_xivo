@@ -20,7 +20,7 @@ ADD conf/logstash/nginx-patterns.conf /opt/logstash/patterns/nginx
 ADD bin/elk-post-hooks.sh /usr/local/bin/elk-post-hooks.sh
 
 # Add mount point for full log ?
-VOLUME /var/tmp/elkforxivo/
+VOLUME ./elkforxivo/
 #VOLUME /var/tmp/elkforxivo/access/
 #VOLUME /var/tmp/elkforxivo/asterisk/
 
