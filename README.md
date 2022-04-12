@@ -58,20 +58,20 @@ To do this :
 
 Notes:
 - **Asterisk** files must start with `asterisk`
-- **logs** files must be `syslog`
+- **Logs** files must be `syslog`
 - **Nginx access logs** files must start with `access`
 - **Xuc logs** must start with `xuc`
-- **xivo services like authd, confd, ctid** must be `xivo-authd`, `xivo-confd`, `xivo-ctid`
+- **Xivo services like authd, confd, ctid** must be `xivo-authd`, `xivo-confd`, `xivo-ctid`
 :warning: logs must be a plain text asterisk full log (it must be gunzipped)
 
-:white_check_mark: Here is an example :
+:ballot_box_with_check: Here is an example :
 ```bash
-cp /path/to/your/asterisk/logs /elkforxivo/**asterisk**-name
+cp /path/to/your/asterisk/logs /elkforxivo/asterisk-name
 ```
 
 :x: Here is a bad example :
 ```bash
-cp /path/to/your/asterisk/logs /elkforxivo/name-**asterisk**
+cp /path/to/your/asterisk/logs /elkforxivo/name-asterisk
 ```
 
 **make all log readable**
