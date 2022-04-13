@@ -5,6 +5,14 @@ services:
                 volumes:
                         - ./elkforxivo:/var/tmp/elkforxivo:ro
                 ports:
-                        - 5601:5601
-                        - 5044:5044
-                        - 9200:9200
+                        - 127.0.0.1:5601:5601
+                        - 127.0.0.1:5044:5044
+                        - 127.0.0.1:9200:9200
+        reverse-proxy:
+                image: nginx
+                volumes:
+                        - ./nginx.conf:/etc/nginx/conf.d/default.conf
+                        - ./ssl:/root/acme
+                ports:
+                        - 80:80
+                        - 443:443
