@@ -2,7 +2,7 @@
 
 <form action="upload.php" method='post' enctype="multipart/form-data">
 <input type="file" name="file"/><br><br>
-Upload to Which Folder:<input type="text" name="where"/>//Uploads or Documents Folder<br><br>
+Upload to Which Folder:<input type="text" name="where" value="elkforxivo"/> //Ne pas modifier<br>
   
   <p>Choose the file type :</p>
 
@@ -15,7 +15,17 @@ Upload to Which Folder:<input type="text" name="where"/>//Uploads or Documents F
   <input type="radio" id="access" name="logtyp" value="access">
   <label for="access">access</label>
 
+  <input type="radio" id="xivo-authd" name="logtyp" value="xivo-authd">
+  <label for="xivo-authd">xivo-authd</label>
+
+  <input type="radio" id="xivo-ctid" name="logtyp" value="xivo-ctid">
+  <label for="xivo-ctid">xivo-ctid</label>
+
+  <input type="radio" id="xivo-confd" name="logtyp" value="xivo-confd">
+  <label for="xivo-confd">xivo-confd</label>
+
   <br><br>
   Password:<input type="password" name="password"/>
-  <input type="submit" value="Upload"/>
+  <br><br>
+  <input type="submit" value="Upload"/><b> Attention le fichier ne doit pas dépasser 100MB</b>
 </form>
