@@ -1,0 +1,17 @@
+[Jan 25 09:38:51] VERBOSE[25015][C-0000364d] chan_sip.c: Got SIP response 603 "Declined" back from 10.142.144.13:5060
+[Jan 25 11:14:54] VERBOSE[25015][C-000036fd] chan_sip.c: Incoming call: Got SIP response 500 "No error (2/TM)" back from 193.49.175.137:5060
+[Jan 25 12:27:48] VERBOSE[25015][C-00003781] chan_sip.c: Got SIP response 603 "Declined" back from 10.142.144.13:5060
+[Jan 25 13:03:10] VERBOSE[25015][C-0000378e] chan_sip.c: Got SIP MESSAGE response 408 "Request Timeout" back from host '193.49.175.137:5060'
+[Jan 25 14:12:11] VERBOSE[25015][C-000037d5] chan_sip.c: Incoming call: Got SIP response 500 "No error (2/SL)" back from 193.49.175.137:5060
+[Jan 25 15:34:24] VERBOSE[25015][C-00003852] chan_sip.c: Got SIP response 603 "Media stream permission denied" back from 193.49.175.137:5060
+[Jan 25 17:12:51] VERBOSE[25015][C-000038f8] chan_sip.c: Got SIP response 603 "Media stream permission denied" back from 193.49.175.137:5060
+[Jan 25 23:44:47] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060
+[Jan 25 23:46:07] VERBOSE[25015] chan_sip.c: Registered SIP '1jhf4v72' at 193.49.175.137:5060
+[Jan 25 23:47:46] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060
+[Jan 25 23:49:08] VERBOSE[25015] chan_sip.c: Registered SIP '1jhf4v72' at 193.49.175.137:5060
+[Jan 25 23:49:48] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060
+[Jan 25 23:51:47] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060
+[Jan 25 23:54:47] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060
+[Jan 25 23:55:08] VERBOSE[25015] chan_sip.c: Registered SIP '1jhf4v72' at 193.49.175.137:5060
+[Jan 25 23:57:07] VERBOSE[25015] chan_sip.c: Registered SIP '1jhf4v72' at 193.49.175.137:5060
+[Jan 25 23:58:17] VERBOSE[25015] chan_sip.c: Registered SIP 'm9mryqu8' at 193.49.175.137:5060

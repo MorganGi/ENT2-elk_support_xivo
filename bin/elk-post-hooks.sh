@@ -26,7 +26,15 @@
 #    }
 #  }
 
-curl -XPUT 'localhost:9200/xivo?pretty' -H 'Content-Type: application/json' -d'
+curl -X POST "elk-dockercompose_elk_1:5601/api/data_views/data_view" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d'
+{
+  "data_view": {
+     "title": "xivo*"
+  }
+}
+'
+
+curl -X PUT 'elk-dockercompose_elk_1:9200/xivo?pretty' -H 'Content-Type: application/json' -d'
 {
 	"mappings": {
 		"properties":{
@@ -38,12 +46,8 @@ curl -XPUT 'localhost:9200/xivo?pretty' -H 'Content-Type: application/json' -d'
 }'
 
 
+curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/xuc_overview
 
+curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/nginx_overview
 
-
-
-
-
-
-
-
+curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/asterisk-full
