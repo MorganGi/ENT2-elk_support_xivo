@@ -12,7 +12,7 @@ $where_to_upload= str_replace(" ", "", $where_to_upload);
 
 $password1= $_POST['password'];
 
-$password2= "a"; //change this to the password you want 
+$password2= "Avencall2022"; //change this to the password you want 
 
 if (isset($_POST['logtyp'])){   
   $logtype= $_POST['logtyp'];
@@ -56,6 +56,8 @@ if (isset($name)) {
 if  ((!empty($name)) && ($password1 == $password2)){
 echo "The file you uploaded is shown below.<br><br>";
 echo "<a href='$where_to_upload" ."$name'>$name</a>";
+echo "<br><br>";
+echo "<a href=https://support-tools.avencall.com/elksupport/kibana/>Explore Kibana</a>";
 echo "<br><br>";
 }
 ?>

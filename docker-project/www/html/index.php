@@ -49,3 +49,10 @@ Upload to Which Folder:<input type="text" name="where" value="elkforxivo"/> //Ne
   <br><br>
   <input type="submit" value="Upload"/><b> Attention le fichier ne doit pas dépasser 100MB</b>
 </form>
+<hr>
+<br>
+<h1>If you don't want to upload a file</h1>
+<br>
+<a href="https://support-tools.avencall.com/elksupport/kibana/">Continue to Kibana</a>
+
+
