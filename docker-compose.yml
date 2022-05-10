@@ -7,10 +7,10 @@ services:
                         - ./elkforxivo:/var/tmp/elkforxivo:ro
                         - ./proxy:/opt/kibana/config
                         - ./dashboardJson:/dashboardJson
-                ports:
-                        - 127.0.0.1:5601:5601
-                        - 127.0.0.1:5044:5044
-                        - 127.0.0.1:9200:9200
+#               ports:
+#                       - 127.0.0.1:5601:5601
+#                       - 127.0.0.1:5044:5044
+#                       - 127.0.0.1:9200:9200
 
         reverse-proxy:
                 image: trafex/php-nginx
@@ -21,10 +21,10 @@ services:
                         - ./docker-project/php/php.ini:/etc/php8/php.ini
                         - ./ssl:/root
                         - ./docker-project/www/html:/var/lib/nginx/html/ #/var/www/html
-                        - ./elkforxivo:/var/lib/nginx/html/elkforxivo #/var/www/html/elkforxivo
+                        - ./elkforxivo:/var/lib/nginx/html/elkforxivo/ #/var/www/html/elkforxivo
                 ports:
-                        - 80:80
-                        - 443:443
+                        #- 80:80
+                        - 127.0.0.1:9443:4443
                         
 #        nginx:
 #                build: ./docker-project/nginx/
