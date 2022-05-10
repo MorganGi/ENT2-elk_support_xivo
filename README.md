@@ -48,7 +48,7 @@ To be able to explore logs, run the container using docker-compose.
 ```bash
 docker-compose up -d
 ```
-##Last configuration
+## Last configuration
 
 Allow directory html to be executed:
 
