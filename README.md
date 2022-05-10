@@ -19,7 +19,8 @@ The docker image is built from sebp/elk.
   - **mainly** you will have to increase the `vm-max-map-count`, see [Elasticsearch virtual memory guide](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/vm-max-map-count.html#vm-max-map-count)
 - Download the directory 
 - Configure Nginx proxy on support-tools like this :
- location /elastic/ {
+ ```
+   location /elastic/ {
         include proxy_params;
         proxy_pass http://127.0.0.1:9200/;
    }
@@ -38,7 +39,7 @@ The docker image is built from sebp/elk.
    }
 
  }
-
+```
 
 # Launch ELK
 
