@@ -10,7 +10,7 @@
 # And create a new asterisk index in Elastic
 #echo "Create xivo index and mapping"
 #curl -XPUT 'localhost:9200/xivo?pretty' -H 'Content-Type: application/json' -d'
-#{
+# {
 #  "mappings": {
 #    "doc": {
 #      "properties": {
@@ -45,9 +45,11 @@ curl -X PUT 'elk-dockercompose_elk_1:9200/xivo?pretty' -H 'Content-Type: applica
 	}
 }'
 
+curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/nbReqByIp
 
 curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/xuc_overview
 
-curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/nginx_overview
+#curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/nginx_overview
 
 curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/kibana/dashboards/import" -d @./dashboardJson/asterisk-full
+
